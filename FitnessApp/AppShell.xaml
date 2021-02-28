@@ -3,6 +3,7 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:FitnessApp.Views"
        Title="FitnessApp"
+       xmlns:helpers="clr-namespace:FitnessApp.Helpers"
        x:Class="FitnessApp.AppShell">
 
     <!--
@@ -14,15 +15,15 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.ForegroundColor" Value="White" />
-                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Background}" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource Background}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource TabIconSelected}" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource TabIconUnSelected}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource TabBarBackground}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource TabIconSelected}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource TabIconUnSelected}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource TabIconSelected}"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
@@ -30,16 +31,46 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
-        <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
-    </TabBar>
-
-    <!--
-        If you would like to navigate to this content you can do so by calling
-        await Shell.Current.GoToAsync("//LoginPage");
-    -->
-    <TabBar>
-        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        <Tab Title="Featured"
+             Route="FeaturedPage"
+             Shell.NavBarIsVisible="False">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FARegular" Glyph="{x:Static helpers:FAIcons.Star}"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:FeaturedPage}" />
+        </Tab>
+        <Tab Title="Challenges"
+             Route="ChallengesPage"
+             Shell.NavBarIsVisible="False">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FASolid" Glyph="{x:Static helpers:FAIcons.Trophy}"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:ChallengesPage}" />
+        </Tab>
+        <Tab Title="Classes"
+             Route="ClassesPage"
+             Shell.NavBarIsVisible="False">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FARegular" Glyph="{x:Static helpers:FAIcons.PlayCircle}"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:ClassesPage}" />
+        </Tab>
+        <Tab Title="Profile"
+             Route="ProfilePage"
+             Shell.NavBarIsVisible="False">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FARegular" Glyph="{x:Static helpers:FAIcons.User}"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:ProfilePage}" />
+        </Tab>
+        <Tab Title="More"
+             Route="MorePage"
+             Shell.NavBarIsVisible="False">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FASolid" Glyph="{x:Static helpers:FAIcons.Bars}"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:MorePage}" />
+        </Tab>
     </TabBar>
 
 
