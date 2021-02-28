@@ -7,12 +7,13 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
             <Color x:Key="Background">#D4D5DB </Color>
             <Color x:Key="TabBarBackground">#FAF8FA</Color>
             <Color x:Key="CardBackground">#FFFEFF</Color>
-
-            <Color x:Key="TabIconSelected">#F44257</Color>
+            <Color x:Key="ButtonOutline">#686E7A</Color>
+            <Color x:Key="Accent">#FF344A</Color>
+            
+            <Color x:Key="TabIconSelected">#FF344A</Color>
             <Color x:Key="TabIconUnSelected">#2C2D31</Color>
             <Color x:Key="TextSecondary">#606572</Color>
             <Color x:Key="TabPrimary">#25272C</Color>
