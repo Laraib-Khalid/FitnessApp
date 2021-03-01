@@ -16,7 +16,7 @@
             <Color x:Key="TabIconSelected">#FF344A</Color>
             <Color x:Key="TabIconUnSelected">#2C2D31</Color>
             <Color x:Key="TextSecondary">#606572</Color>
-            <Color x:Key="TabPrimary">#25272C</Color>
+            <Color x:Key="TextPrimary">#25272C</Color>
             <!--<Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
