@@ -1,12 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FitnessApp.Views.ChallengesPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="FitnessApp.Views.ChallengesPage"
+             BackgroundColor="{StaticResource Background}" Shell.NavBarIsVisible="True"
+             xmlns:helpers="clr-namespace:FitnessApp.Helpers">
+    <Shell.TitleView>
+        <Grid BackgroundColor="Pink" ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto">
+            <Label FontFamily="FASolid" Text="{x:Static helpers:FAIcons.TrophyAlt}"
+                   TextColor="{StaticResource TextPrimary}" Grid.Row="0" Grid.Column="0"
+                    HorizontalOptions="Center"/>
+            <Label Grid.Row="1" HorizontalOptions="Center" Text="Active"/>
+            <Label FontFamily="FASolid" Text="{x:Static helpers:FAIcons.TrophyAlt}"
+                   TextColor="{StaticResource TextPrimary}" Grid.Row="0" Grid.Column="1"
+                    HorizontalOptions="Center"/>
+            <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="Upcoming"/>
+            <Label FontFamily="FASolid" Text="{x:Static helpers:FAIcons.TrophyAlt}"
+                   TextColor="{StaticResource TextPrimary}" Grid.Row="0" Grid.Column="2"
+                    HorizontalOptions="Center"/>
+            <Label Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Text="Completed"/>
+        </Grid>
+    </Shell.TitleView>
+    <Grid Padding="0,16,0,44"
+          RowDefinitions=".9*,Auto">
+        <CarouselView
+            Grid.Row="0" Loop="False" PeekAreaInsets="20" IndicatorView="indicatorView">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20"
+                                   SnapPointsAlignment="Center" SnapPointsType="Mandatory"/>
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Item One</x:String>
+                    <x:String>Item Two</x:String>
+                    <x:String>Item Three</x:String>
+                </x:Array>
+            </CarouselView.ItemsSource>
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="8,0,0,0">
+                        <Frame WidthRequest="320" CornerRadius="8" HasShadow="True" Padding="0">
+                            <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+                                    <GradientStop Color="#8A2387"
+                            Offset="0.1" />
+                                    <GradientStop Color="#E94057"
+                            Offset="0.6" />
+                                    <GradientStop Color="#F27121"
+                            Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                            <Grid RowDefinitions="*,Auto,Auto">
+                                <Label FontSize="Small" TextColor="{StaticResource TextSecondary}"
+                                   Margin="16,4,0,0" Grid.Row="1" Text="PROGRAM - 4 WEEKS"/>
+                                <Label FontSize="Medium" TextColor="{StaticResource TextPrimary}"
+                                   Margin="16,0,0,0" Grid.Row="2" Text="STRENGTH"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView x:Name="indicatorView"
+                   IndicatorColor="#ADB4BD"
+                   SelectedIndicatorColor="#5D6578"
+                   HorizontalOptions="Center"
+                       Grid.Row="1"
+                       IndicatorSize="10"/>
+    </Grid>
 </ContentPage>

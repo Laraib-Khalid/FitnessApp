@@ -21,7 +21,7 @@
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="{StaticResource TabIconUnSelected}" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource TabBarBackground}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource TabIconSelected}"/>
+                <!--<Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource TabIconSelected}"/>-->
                 <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource TabIconUnSelected}"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource TabIconSelected}"/>
             </Style>
@@ -41,7 +41,7 @@
         </Tab>
         <Tab Title="Challenges"
              Route="ChallengesPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="True">
             <Tab.Icon>
                 <FontImageSource FontFamily="FASolid" Glyph="{x:Static helpers:FAIcons.Trophy}"/>
             </Tab.Icon>

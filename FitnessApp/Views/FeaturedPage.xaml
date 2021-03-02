@@ -5,11 +5,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:local="clr-namespace:FitnessApp.ViewModels"
              mc:Ignorable="d"
-             x:Class="FitnessApp.Views.FeaturedPage">
+             x:Class="FitnessApp.Views.FeaturedPage"
+             BackgroundColor="{StaticResource Background}">
     <d:ContentPage.BindingContext>
         <local:FeaturedViewModel/>
     </d:ContentPage.BindingContext>
-    <Grid BackgroundColor="{StaticResource Background}" RowDefinitions="Auto,240,*">
+    <Grid RowDefinitions="Auto,240,*">
         <Label Margin="16,10,0,0" FontSize="Medium" FontAttributes="Bold"
                TextColor="{StaticResource TextPrimary}" Text="Live and Upcoming"/>
         <CollectionView Grid.Row="1" VerticalOptions="Start" ItemsLayout="HorizontalList">
