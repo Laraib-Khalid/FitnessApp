@@ -41,7 +41,7 @@
         </Tab>
         <Tab Title="Challenges"
              Route="ChallengesPage"
-             Shell.NavBarIsVisible="True">
+             Shell.NavBarIsVisible="False">
             <Tab.Icon>
                 <FontImageSource FontFamily="FASolid" Glyph="{x:Static helpers:FAIcons.Trophy}"/>
             </Tab.Icon>
