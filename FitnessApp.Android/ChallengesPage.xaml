@@ -4,55 +4,38 @@
              x:Class="FitnessApp.Views.ChallengesPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
-             xmlns:viewmodels="clr-namespace:FitnessApp.ViewModels"
              BackgroundColor="{StaticResource Background}" Shell.NavBarIsVisible="False"
-             xmlns:helpers="clr-namespace:FitnessApp.Helpers"
-             xmlns:converters="clr-namespace:FitnessApp.Converters"
-             x:DataType="viewmodels:ChallengesViewModel">
-    <ContentPage.BindingContext>
-        <viewmodels:ChallengesViewModel/>
-    </ContentPage.BindingContext>
+             xmlns:helpers="clr-namespace:FitnessApp.Helpers">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="CategoryIcon" TargetType="Label">
                 <Setter Property="FontFamily" Value="FASolid"/>
                 <Setter Property="FontSize" Value="28"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
-                <!--<Setter Property="TextColor" Value="{StaticResource TextSecondary}"/>-->
+                <Setter Property="TextColor" Value="{StaticResource TextSecondary}"/>
             </Style>
             <Style x:Key="CategoryLabel" TargetType="Label">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
-            <converters:SelectedIndexColorConverter x:Key="SelectedIndexColorConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid RowDefinitions="Auto,.9*,Auto" Padding="0,0,0,12">
-        <Grid BackgroundColor="{StaticResource CardBackground}" ColumnDefinitions="*,*,*" Padding="0" RowDefinitions="Auto,Auto">
+        <Grid Padding="16" BackgroundColor="{StaticResource CardBackground}" ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto">
             <Grid.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="iOS" Value="0,0,0,0" />
                 </OnPlatform>
             </Grid.Margin>
-            <StackLayout Padding="16" BackgroundColor="Red" Grid.Column="0">
-                <Label Style="{StaticResource CategoryIcon}" Text="{x:Static helpers:FAIcons.Trophy}"
-                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
-                <Label Style="{StaticResource CategoryLabel}" Text="Active"
-                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
-            </StackLayout>
-            <StackLayout Grid.Column="1" Padding="16">
-                <Label Style="{StaticResource CategoryIcon}" Text="{x:Static helpers:FAIcons.AngleDoubleUp}"
-                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
-                <Label Style="{StaticResource CategoryLabel}" Text="Upcoming"
-                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
-            </StackLayout>
-            <StackLayout Grid.Column="2" Padding="16">
-                <Label Style="{StaticResource CategoryIcon}" Text="{x:Static helpers:FAIcons.Award}"
-                    TextColor="{Binding SelectedCategoryIndex, 
-                    Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
-                <Label Style="{StaticResource CategoryLabel}" Text="Completed"
-                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
-            </StackLayout>
+            <Label Style="{StaticResource CategoryIcon}" Text="{x:Static helpers:FAIcons.Trophy}"
+                    Grid.Row="0" Grid.Column="0"/>
+            <Label Grid.Row="1" Style="{StaticResource CategoryLabel}" Text="Active"/>
+            <Label Style="{StaticResource CategoryIcon}" Text="{x:Static helpers:FAIcons.AngleDoubleUp}"
+                    Grid.Row="0" Grid.Column="1"/>
+            <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource CategoryLabel}" Text="Upcoming"/>
+            <Label Style="{StaticResource CategoryIcon}" Text="{x:Static helpers:FAIcons.Award}"
+                    Grid.Row="0" Grid.Column="2"/>
+            <Label Grid.Row="1" Grid.Column="2"  Style="{StaticResource CategoryLabel}" Text="Completed"/>
         </Grid>
         <CarouselView
             Grid.Row="1" Loop="False" PeekAreaInsets="20" IndicatorView="indicatorView">
