@@ -55,7 +55,7 @@
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="8,8,0,8">
-                        <!--<VisualStateManager.VisualStateGroups>
+                        <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="CurrentItem">
                                     <VisualState.Setters>
@@ -82,7 +82,7 @@
                                     </VisualState.Setters>
                                 </VisualState>
                             </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>-->
+                        </VisualStateManager.VisualStateGroups>
                         <Frame CornerRadius="8" WidthRequest="320" HasShadow="True" Padding="0">
                             <Frame.Background>
                                 <LinearGradientBrush StartPoint="0,0"
@@ -119,7 +119,7 @@
                                            Text="Build Habits for Succes" TextColor="White"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" 
-                                             Spacing="4" Grid.Row="3">
+                                             VerticalOptions="Center" Spacing="4" Grid.Row="3">
                                     <Label Text="{x:Static helpers:FAIcons.Check}" 
                                            TextColor="White" FontFamily="FASolid" FontSize="Micro"/>
                                     <Label Text="Joined" FontSize="Micro" TextColor="White"/>
@@ -128,6 +128,33 @@
                                            TextColor="White" FontFamily="FASolid" FontSize="Micro"/>
                                     <Label Text="1,124,492 participants" TextColor="White" FontSize="Micro"/>
                                 </StackLayout>
+                                <Frame Grid.Row="4" Padding="12" Margin="12,0,12,12" HasShadow="False">
+                                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
+                                        <Frame HeightRequest="50" WidthRequest="50" 
+                                                CornerRadius="25"  HasShadow="False"
+                                               VerticalOptions="Center"
+                                               BorderColor="{StaticResource TextSecondary}"
+                                                Padding="0" HorizontalOptions="Center">
+                                            <Label Text="{x:Static helpers:FAIcons.ThumbsUp}"
+                                                    FontSize="24" TextColor="{StaticResource TextSecondary}"
+                                                    HorizontalOptions="Center" VerticalOptions="Center" FontFamily="FASolid"/>
+                                        </Frame>
+                                        <StackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                                            <Label Text="Unearned" FontSize="Small" TextColor="{StaticResource TextPrimary}"/>
+                                            <Label Text="616 min to 1k" FontSize="Micro" TextColor="{StaticResource TextSecondary}"/>
+                                            <ProgressBar Progress=".3" ProgressColor="{StaticResource Accent}" Margin="0,4,0,0"/>
+                                        </StackLayout>
+                                        <Frame HeightRequest="30" WidthRequest="30" 
+                                               Grid.Column="2" VerticalOptions="End"
+                                               CornerRadius="15" HasShadow="False"
+                                               BorderColor="{StaticResource TextSecondary}"
+                                               Padding="0" HorizontalOptions="Center">
+                                            <Label Text="{x:Static helpers:FAIcons.ThumbsUp}"
+                                                    FontSize="14" TextColor="{StaticResource TextSecondary}"
+                                                    HorizontalOptions="Center" VerticalOptions="Center" FontFamily="FASolid"/>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
                             </Grid>
                         </Frame>
                     </Grid>
