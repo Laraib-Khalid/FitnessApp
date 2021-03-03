@@ -28,7 +28,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid RowDefinitions="Auto,.9*,Auto" Padding="0,0,0,12">
-        <Grid BackgroundColor="{StaticResource CardBackground}" ColumnDefinitions="*,*,*" Padding="0" RowDefinitions="Auto,Auto">
+        <Grid BackgroundColor="{StaticResource CardBackground}" ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto">
             <Grid.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="iOS" Value="0,0,0,0" />
@@ -42,16 +42,17 @@
             </StackLayout>
             <StackLayout Grid.Column="1" Padding="16">
                 <Label Style="{StaticResource CategoryIcon}" Text="{x:Static helpers:FAIcons.AngleDoubleUp}"
-                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
+                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=1}"/>
                 <Label Style="{StaticResource CategoryLabel}" Text="Upcoming"
-                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
+                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},
+                    ConverterParameter=1}"/>
             </StackLayout>
             <StackLayout Grid.Column="2" Padding="16">
                 <Label Style="{StaticResource CategoryIcon}" Text="{x:Static helpers:FAIcons.Award}"
                     TextColor="{Binding SelectedCategoryIndex, 
-                    Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
+                    Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=1}"/>
                 <Label Style="{StaticResource CategoryLabel}" Text="Completed"
-                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=0}"/>
+                   TextColor="{Binding SelectedCategoryIndex, Converter={StaticResource SelectedIndexColorConverter},ConverterParameter=1}"/>
             </StackLayout>
         </Grid>
         <CarouselView
