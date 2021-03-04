@@ -11,6 +11,7 @@
     <None Remove="Resources\Fonts\FABrands.otf" />
     <None Remove="Resources\Fonts\FARegular.otf" />
     <None Remove="Resources\Fonts\FASolid.otf" />
+    <None Remove="Resources\Images\medal.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\FABrands.otf" />
@@ -29,7 +30,7 @@
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.763-beta" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
+    <SharedImage Include="Resources\Images\medal.png" BaseSize="86,86"/>
   </ItemGroup>
 
 </Project>

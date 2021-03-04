@@ -30,7 +30,7 @@
                             <Label FontSize="Small" TextColor="{StaticResource TextSecondary}"
                                    Margin="16,4,0,0" Grid.Row="1" Text="PROGRAM - 4 WEEKS"/>
                             <Label FontSize="Medium" TextColor="{StaticResource TextPrimary}"
-                                   Margin="16,0,0,0" Grid.Row="2" Text="STRENGTH"/>
+                                   Margin="16,0,0,6" Grid.Row="2" Text="STRENGTH"/>
                         </Grid>
                     </Frame>
                 </Grid>

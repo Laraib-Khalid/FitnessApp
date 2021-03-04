@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace FitnessApp.Views
+namespace FitnessApp.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChallengesPage : ContentPage
+    public partial class ActiveChallengesView : ContentView
     {
-        public ChallengesPage()
+        public ActiveChallengesView()
         {
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
     }
 }

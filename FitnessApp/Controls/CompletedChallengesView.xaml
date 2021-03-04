@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessApp.Controls.CompletedChallengesView"
+             xmlns:helpers="clr-namespace:FitnessApp.Helpers">
+    <ContentView.Content>
+      <StackLayout>
+            <CollectionView Grid.Row="1" VerticalOptions="Start" ItemsLayout="VerticalList">
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Item One</x:String>
+                        <x:String>Item Two</x:String>
+                        <x:String>Item Three</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="16">
+                            <Frame BackgroundColor="{StaticResource CardBackground}" WidthRequest="320" CornerRadius="8" HasShadow="True" Padding="0">
+                                <Grid RowDefinitions="100,Auto">
+                                    <StackLayout Padding="16" Spacing="0">
+                                        <StackLayout.Background>
+                                            <LinearGradientBrush StartPoint="0,0"
+                                            EndPoint="1,1">
+                                                <GradientStop Color="#8A2387"
+                                            Offset="0.1" />
+                                                <GradientStop Color="#E94057"
+                                            Offset="0.6" />
+                                                <GradientStop Color="#F27121"
+                                            Offset="1.0" />
+                                            </LinearGradientBrush>
+                                        </StackLayout.Background>
+                                        <Label FontSize="Small" TextColor="White"
+                                               Text="ENDED 12/31/2020" VerticalTextAlignment="Center"/>
+                                        <Label FontSize="Medium" TextColor="White"
+                                               Text="Holiday Activity Challenge" VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="16,8,16,12">
+                                        <Label FontSize="Medium" TextColor="{StaticResource TextPrimary}"
+                                               Text="Earned Gold" VerticalTextAlignment="Center"/>
+                                        <Label FontSize="Micro" TextColor="{StaticResource TextSecondary}"
+                                               Text=" . " VerticalTextAlignment="Center"/>
+                                        <Label FontSize="Small" TextColor="{StaticResource TextSecondary}"
+                                               Text="29 days" VerticalTextAlignment="Center"/>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                            <StackLayout HorizontalOptions="End" VerticalOptions="End" Margin="0,0,16,14">
+                                <Image Source="medal.png"
+                                   HeightRequest="80"
+                                   WidthRequest="80"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center">
+                                <Image.Clip>
+                                    <EllipseGeometry
+                                        Center="40,40"
+                                        RadiusX="38"
+                                        RadiusY="38"/>
+                                </Image.Clip>
+                            </Image>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
