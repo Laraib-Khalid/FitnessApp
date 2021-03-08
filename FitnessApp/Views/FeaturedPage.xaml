@@ -5,6 +5,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:local="clr-namespace:FitnessApp.ViewModels"
              mc:Ignorable="d"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
              x:Class="FitnessApp.Views.FeaturedPage"
              BackgroundColor="{StaticResource Background}">
     <d:ContentPage.BindingContext>
@@ -23,8 +25,10 @@
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Grid Padding="16,0,0,0">
-                    <Frame BackgroundColor="{StaticResource CardBackground}" WidthRequest="320" CornerRadius="8" HasShadow="True" Padding="0">
+                <Grid Padding="8,4">
+                    <Frame BackgroundColor="{StaticResource CardBackground}"
+                           WidthRequest="320" CornerRadius="8" HasShadow="False" 
+                           IsClippedToBounds="True" Padding="0">
                         <Grid RowDefinitions="170,Auto,Auto">
                             <BoxView BackgroundColor="Black" />
                             <Label FontSize="Small" TextColor="{StaticResource TextSecondary}"

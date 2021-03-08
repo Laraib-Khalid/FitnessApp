@@ -5,6 +5,8 @@
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:converters="clr-namespace:FitnessApp.Converters"
              xmlns:helpers="clr-namespace:FitnessApp.Helpers"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
              BackgroundColor="{StaticResource Background}">
     <ContentPage.Resources>
         <Style x:Key="TabViewItemStyle" TargetType="xct:TabViewItem">
@@ -87,13 +89,14 @@
                                 Padding="0"
                                 CornerRadius="12"
                                 BackgroundColor="Black"
-                                HasShadow="False">
+                                HasShadow="False"
+                                IsClippedToBounds="True">
                                 <Grid ColumnDefinitions="*,*">
                                     <Label Text="{Binding .}"
                                            TextColor="White"
                                            VerticalOptions="Center"
                                            Margin="30,0"
-                                           FontSize="{OnPlatform Android=24,iOS=18}"
+                                           FontSize="{OnPlatform Android=22,iOS=18}"
                                            LineBreakMode="WordWrap"/>
                                     <Image Grid.Column="1" Source="strength.png"/>
                                 </Grid>

@@ -16,7 +16,8 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="16,9">
-                            <Frame BackgroundColor="{StaticResource CardBackground}" WidthRequest="320" CornerRadius="8" HasShadow="True" Padding="0">
+                            <Frame BackgroundColor="{StaticResource CardBackground}"
+                                   WidthRequest="320" CornerRadius="8" HasShadow="False" IsClippedToBounds="True" Padding="0">
                                 <Grid RowDefinitions="100,Auto">
                                     <StackLayout Padding="16" Spacing="0">
                                         <StackLayout.Background>
