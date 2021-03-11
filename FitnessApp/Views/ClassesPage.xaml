@@ -3,43 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FitnessApp.Views.ClassesPage"
              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:converters="clr-namespace:FitnessApp.Converters"
              xmlns:helpers="clr-namespace:FitnessApp.Helpers"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
              BackgroundColor="{StaticResource Background}">
-    <ContentPage.Resources>
-        <Style x:Key="TabViewItemStyle" TargetType="xct:TabViewItem">
-            <Setter Property="Padding" Value="0,6"/>
-            <Setter Property="TextColor" Value="{StaticResource TextSecondary}"/>
-            <Setter Property="TextColorSelected" Value="{StaticResource Accent}"/>
-        </Style>
-        <ControlTemplate x:Key="TabItemTemplate">
-            <Grid
-                VerticalOptions="Center"
-                RowSpacing="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Image 
-                    Grid.Row="0"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    WidthRequest="36"
-                    HeightRequest="36"
-                    Margin="6"
-                    Source="{TemplateBinding CurrentIcon}"/>
-                <Label
-                    Grid.Row="1"
-                    HorizontalOptions="Center"
-                    FontSize="{TemplateBinding FontSize}"
-                    Text="{TemplateBinding Text}"
-                    TextColor="{TemplateBinding CurrentTextColor}"/>
-            </Grid>
-                
-        </ControlTemplate>
-    </ContentPage.Resources>
     <xct:TabView
                 TabStripPlacement="Top"
                 TabStripBackgroundColor="{StaticResource CardBackground}"

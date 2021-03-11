@@ -7,19 +7,89 @@
              xmlns:viewmodels="clr-namespace:FitnessApp.ViewModels"
              BackgroundColor="{StaticResource Background}" Shell.NavBarIsVisible="False"
              xmlns:helpers="clr-namespace:FitnessApp.Helpers"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:converters="clr-namespace:FitnessApp.Converters"
              xmlns:controls="clr-namespace:FitnessApp.Controls"
              x:DataType="viewmodels:ChallengesViewModel">
     <ContentPage.BindingContext>
         <viewmodels:ChallengesViewModel/>
     </ContentPage.BindingContext>
-    <ContentPage.Resources>
+    <xct:TabView
+                TabStripPlacement="Top"
+                TabStripBackgroundColor="{StaticResource CardBackground}"
+                TabStripHeight="90"
+                IsSwipeEnabled="False">
+        <!--TabIndicatorColor="Yellow"
+                TabContentBackgroundColor="Yellow"-->
+
+        <xct:TabViewItem
+                    Style="{StaticResource TabViewItemStyle}"
+                    Text="Active"
+                    ControlTemplate="{StaticResource TabItemTemplate}">
+            <xct:TabViewItem.Icon>
+                <FontImageSource 
+                            FontFamily="FASolid" 
+                            Glyph="{x:Static helpers:FAIcons.Trophy}"
+                            Color="{StaticResource TextSecondary}"
+                            Size="42"/>
+            </xct:TabViewItem.Icon>
+            <xct:TabViewItem.IconSelected>
+                <FontImageSource
+                            FontFamily="FASolid" 
+                            Glyph="{x:Static helpers:FAIcons.Trophy}"
+                            Color="{StaticResource Accent}"
+                            Size="42"/>
+            </xct:TabViewItem.IconSelected>
+            <controls:ActiveChallengesView Margin="0,42,0,0"/>
+        </xct:TabViewItem>
+        <xct:TabViewItem
+                    Style="{StaticResource TabViewItemStyle}"
+                    Text="Upcoming"
+                    ControlTemplate="{StaticResource TabItemTemplate}">
+            <xct:TabViewItem.Icon>
+                <FontImageSource 
+                            FontFamily="FASolid" 
+                            Glyph="{x:Static helpers:FAIcons.AngleDoubleUp}"
+                            Color="{StaticResource TextSecondary}"
+                            Size="42"/>
+            </xct:TabViewItem.Icon>
+            <xct:TabViewItem.IconSelected>
+                <FontImageSource
+                            FontFamily="FASolid" 
+                            Glyph="{x:Static helpers:FAIcons.AngleDoubleUp}"
+                            Color="{StaticResource Accent}"
+                            Size="42"/>
+            </xct:TabViewItem.IconSelected>
+            <controls:ActiveChallengesView Margin="0,42,0,0"/>
+        </xct:TabViewItem>
+        <xct:TabViewItem
+                    Style="{StaticResource TabViewItemStyle}"
+                    Text="Completed"
+                    ControlTemplate="{StaticResource TabItemTemplate}">
+            <xct:TabViewItem.Icon>
+                <FontImageSource 
+                            FontFamily="FASolid" 
+                            Glyph="{x:Static helpers:FAIcons.Award}"
+                            Color="{StaticResource TextSecondary}"
+                            Size="42"/>
+            </xct:TabViewItem.Icon>
+            <xct:TabViewItem.IconSelected>
+                <FontImageSource
+                            FontFamily="FASolid" 
+                            Glyph="{x:Static helpers:FAIcons.Award}"
+                            Color="{StaticResource Accent}"
+                            Size="42"/>
+            </xct:TabViewItem.IconSelected>
+            <controls:CompletedChallengesView Margin="0,42,0,0"/>
+        </xct:TabViewItem>
+    </xct:TabView>
+    <!--<ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="CategoryIcon" TargetType="Label">
                 <Setter Property="FontFamily" Value="FASolid"/>
                 <Setter Property="FontSize" Value="28"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
-                <!--<Setter Property="TextColor" Value="{StaticResource TextSecondary}"/>-->
+                --><!--<Setter Property="TextColor" Value="{StaticResource TextSecondary}"/>--><!--
             </Style>
             <Style x:Key="CategoryLabel" TargetType="Label">
                 <Setter Property="FontSize" Value="Small"/>
@@ -28,8 +98,8 @@
             <converters:SelectedIndexColorConverter x:Key="SelectedIndexColorConverter" />
             <converters:SelectedIndexVisibleConverter x:Key="SelectedIndexVisibleConverter" />
         </ResourceDictionary>
-    </ContentPage.Resources>
-    <Grid RowDefinitions="Auto,.9*,Auto">
+    </ContentPage.Resources>-->
+    <!--<Grid RowDefinitions="Auto,.9*,Auto">
         <Grid BackgroundColor="{StaticResource CardBackground}" ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto">
             <Grid.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
@@ -75,5 +145,5 @@
         <controls:ActiveChallengesView Grid.Row="1" IsVisible="{Binding SelectedCategoryIndex,Converter={StaticResource SelectedIndexVisibleConverter},ConverterParameter='0'}"/>
         <controls:ActiveChallengesView Grid.Row="1" IsVisible="{Binding SelectedCategoryIndex,Converter={StaticResource SelectedIndexVisibleConverter},ConverterParameter=''}"/>
         <controls:CompletedChallengesView Grid.Row="1" IsVisible="{Binding SelectedCategoryIndex,Converter={StaticResource SelectedIndexVisibleConverter},ConverterParameter='2'}"/>
-    </Grid>
+    </Grid>-->
 </ContentPage>
