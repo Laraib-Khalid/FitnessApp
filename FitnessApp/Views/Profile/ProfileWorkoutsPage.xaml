@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FitnessApp.Views.Profile.ProfileWorkoutsPage"
+             xmlns:models="clr-namespace:FitnessApp.Models"
              BackgroundColor="{StaticResource Background}">
     <Shell.TitleView>
         <StackLayout HorizontalOptions="FillAndExpand"
@@ -17,11 +18,28 @@
                 HeightRequest="1"/>
         </StackLayout>
     </Shell.TitleView>
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type models:FinishedWorkout}" >
+                <models:FinishedWorkout Name="30 min BHM: Hip Hop Ride"
+                                        Instructor="ALLY LOVE"
+                                        ActivityType="CYCLING"
+                                        FinishedDate="02/11/21 @ 8:28PM"
+                                        AiredDate="From Sun 02/07/21 @ 09:00 AM"
+                                        RideLocation="App"/>
+                <models:FinishedWorkout Name="20 min New Tracks Ride"
+                                        Instructor="ALEX TOUSSAINT"
+                                        ActivityType="Cycling"
+                                        FinishedDate="02/09/21 @ 5:00PM"
+                                        AiredDate="From Thu 02/09/21 @ 2:00 PM"
+                                        RideLocation="App"/>
+                <models:FinishedWorkout Name="30 min Advanced Beginner Ride"
+                                        Instructor="HANNAH FRANKSON"
+                                        ActivityType="Cycling"
+                                        FinishedDate="01/16/21 @ 5:12PM"
+                                        AiredDate="From Thu 01/14/21 @ 10:00 PM"
+                                        RideLocation="App"/>
+            </x:Array>
+        </CollectionView.ItemsSource>
+    </CollectionView>
 </ContentPage>
